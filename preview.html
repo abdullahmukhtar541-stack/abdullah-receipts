@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ps">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdullah Mukhtar | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script>
+function openGallery(){
+  document.getElementById("galleryModal").style.display = "flex";
+}
+
+function closeGallery(){
+  document.getElementById("galleryModal").style.display = "none";
+}
+</script>
+<style>
+  /* BUTTON */
+button{
+  padding:10px 18px;
+  border:none;
+  border-radius:10px;
+  background:#38bdf8;
+  color:black;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* MODAL BACKGROUND */
+.gallery-modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+/* BOX */
+.gallery-box{
+  width:90%;
+  max-width:900px;
+  background:#0f172a;
+  padding:20px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.1);
+  position:relative;
+}
+
+/* CLOSE BUTTON */
+.close-btn{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:red;
+  color:white;
+  border:none;
+  border-radius:6px;
+  padding:6px 10px;
+  cursor:pointer;
+}
+
+/* IMAGE GRID */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:10px;
+  margin-top:20px;
+}
+
+.gallery-grid img{
+  width:100%;
+  border-radius:10px;
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.05);
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+.hero img{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #38bdf8;
+  box-shadow:0 0 25px rgba(56,189,248,0.5);
+  transition:0.4s ease;
+}
+
+/* کله چې کرسر ورنږدې شي */
+.hero img:hover{
+  transform:scale(1.2);
+  box-shadow:0 0 40px rgba(56,189,248,0.8);
+}
+.hero img:hover{
+  transform:scale(1.2) rotate(3deg);
+}
+
+body{
+  background: radial-gradient(circle at top,#0f172a,#020617);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 30px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+nav h2{
+  color:#38bdf8;
+}
+
+nav a{
+  color:#cbd5e1;
+  text-decoration:none;
+  margin-left:15px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#38bdf8;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:80px 20px;
+}
+
+.hero img{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  border:3px solid #38bdf8;
+  box-shadow:0 0 25px rgba(56,189,248,0.5);
+}
+
+.hero h1{
+  font-size:42px;
+  margin-top:15px;
+  background:linear-gradient(90deg,#38bdf8,#22c55e,#a78bfa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  color:#94a3b8;
+  margin-top:10px;
+}
+
+.badge{
+  display:inline-block;
+  margin-top:10px;
+  padding:6px 14px;
+  background:linear-gradient(90deg,#38bdf8,#22c55e);
+  border-radius:20px;
+  font-size:12px;
+  color:black;
+  font-weight:600;
+}
+
+/* VISITOR */
+.visitor{
+  text-align:center;
+  margin-top:10px;
+  color:#38bdf8;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:30px;
+}
+
+/* GRID CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
+  margin-top:20px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:#38bdf8;
+  box-shadow:0 10px 30px rgba(56,189,248,0.2);
+}
+
+.card h3{
+  color:#38bdf8;
+  margin-bottom:8px;
+}
+
+/* ABOUT */
+.section{
+  margin-top:40px;
+  padding:25px;
+  background:rgba(255,255,255,0.05);
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* CONTACT */
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:10px;
+  background:#0f172a;
+  color:white;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(90deg,#38bdf8,#22c55e);
+  color:black;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.03);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  color:#64748b;
+  margin-top:30px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .hero h1{
+    font-size:30px;
+  }
+  nav{
+    flex-direction:column;
+    gap:10px;
+  }
+}
+.hero img{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #38bdf8;
+  box-shadow:0 0 30px rgba(56,189,248,0.6);
+  transition:0.3s;
+}
+
+.hero img:hover{
+  transform:scale(1.05);
+}/* POPUP BACKGROUND */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+/* POPUP IMAGE */
+.modal img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:15px;
+  box-shadow:0 0 30px rgba(56,189,248,0.6);
+  transform:scale(0.8);
+  transition:0.3s;
+}
+
+.modal.show img{
+  transform:scale(1);
+}
+</style>
+</head>
+<!-- GALLERY MODAL -->
+<div id="galleryModal" class="gallery-modal">
+
+  <div class="gallery-box">
+
+    <button class="close-btn" onclick="closeGallery()">✖</button>
+
+    <h2>My Gallery</h2>
+
+    <div class="gallery-grid">
+
+      <img src="c:\Users\mof\Downloads\Hello Sanghee (3).png">
+      <img src="c:\Users\mof\Downloads\Hello Sanghee (11).jpeg">
+      <img src="c:\Users\mof\Downloads\98767d13-f7fc-4a53-a1b6-76da5546e0d9.png">
+
+    </div>
+
+  </div>
+
+</div>
+<body>
+
+<!-- NAV -->
+<nav>
+  <h2>Abdullah</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+<button onclick="openGallery()">📸 Gallery</button>
+<!-- HERO -->
+<div class="hero">
+  <img src="c:\Users\mof\Downloads\ChatGPT Image Apr 13, 2026, 02_52_16 PM.png" alt="profile">
+  <h1>Abdullah Mukhtar</h1>
+  
+  <div class="badge">Web Developer • Designer • Student</div>
+  <p>Modern Personal Portfolio Website</p>
+</div>
+
+<div class="visitor">
+  👁️ Visitors: <span id="visits">0</span>
+</div>
+
+<div class="container">
+
+<!-- CARDS -->
+<div class="grid">
+
+  <div class="card">
+    <h3>📧 Email</h3>
+    <p>abdullahmukhtar541@gmail.com</p>
+  </div>
+
+  <div class="card">
+    <h3>📞 Phone</h3>
+    <p>+93 702624188</p>
+  </div>
+
+  <div class="card">
+    <h3>📍 Location</h3>
+    <p>Helmand, Afghanistan</p>
+  </div>
+
+  <div class="card">
+    <h3>💼 Profession</h3>
+    <p>Front-End Developer</p>
+  </div>
+
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <h2>About Me</h2>
+  <p style="margin-top:10px;color:#cbd5e1;">
+    زه عبدالله مختار یم. زه د ویب ډیزاین او پرمختګ سره علاقه لرم.
+    دا زما شخصي modern portfolio ویب سایټ دی.
+  </p>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <h2>Contact Me</h2>
+
+  <form action="https://formspree.io/f/mayplkqw" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+</div>
+
+<footer>
+  © 2026 Abdullah Mukhtar | All Rights Reserved
+</footer>
+
+<script>
+let visits = localStorage.getItem("visits") || 0;
+visits++;
+localStorage.setItem("visits", visits);
+document.getElementById("visits").innerText = visits;
+</script>
+
+</body>
+</html>
